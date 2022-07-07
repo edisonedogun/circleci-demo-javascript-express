@@ -5,6 +5,9 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "SHA256:jfWZIfyFQtUjazAc4JZPLdhSbmAw1OwQwsFpH93Pa1M edisonedogun@gmail.com"
       - run: echo "hello world" > ~/output.txt
       - persist_to_workspace:
           root: ~/
